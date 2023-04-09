@@ -1,38 +1,319 @@
-.App {
+html, .App {
+  background-color: black;
+  padding: 10px;
+}
+
+/* Header */
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.log-in-header {
+  width: 30px;
+}
+
+.bag-header {
+  width: 23px;
+}
+
+/* Fin Header */
+
+/* Home */
+.carousel-image {
+  width: 100%;
+  height: 70vh;
+  margin: auto;
+}
+
+.carousel-title {
+  font-weight: bolder;
+  font-size: 50px !important;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+.corusel-p {
+  font-size: 35px !important;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+@media (max-width: 768px) {
+  .carousel-image {   
+    height: 50vh;   
+  }
+
+  .carousel-title {
+    font-weight: bolder;
+    font-size: 30px !important;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  }
+  
+  .corusel-p {
+    font-size: 15px !important;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  }
+}
+
+@media (min-width: 1300px) {
+  .carousel-image {   
+    height: 90vh;   
+  }    
+}
+
+
+/* Fin Home */
+/* Catalogo */
+.container.main {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.item {
+  width: 300px;
+  background-color: yellow;
+  padding: 10px;  
+  border-radius: 15px;
+  height: 540px;
+  margin: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.item > img {
+  width: 280px;
+  height: 240px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.item > .description {
+  height: 100px;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.item > .price {
+  font-size: 30px;
+  font-weight: bold;
+}
+.add-cart {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.qty {
+  text-align: center;
+  border-radius: 8px;
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.add {
+  width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  color: white;
+  background-color: black;
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add:hover {
+  width: 165px;
+  height: 50px;
 }
+
+/* Fin Catalogo */
+
+/* Carrito */
+.shopping-cart {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.item-cart {
+  width: 300px;
+  background-color: yellow;
+  padding: 10px;  
+  border-radius: 15px;
+  height: max-content;
+  margin: 10px;
+  text-align: center;
+}
+
+.item-cart  > img {
+  width: 280px;
+  height: 240px;
+}
+
+.order-btn {
+  width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  color: black;
+  background-color: yellow;
+  font-size: 20px; 
+  border: none;
+}
+
+.order-btn:hover {
+  width: 165px;
+  height: 50px;
+}
+
+.grand-total {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+
+.summary-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+/* Fin Carrito */
+
+/* Direccion */
+.about {
+  text-align: center;
+  color: white;
+}
+
+.img-contact {
+  width: 50%;
+}
+
+/* Fin Direccion */
+
+/* Log In */
+
+.card {
+  background-color: black;
+}
+
+form {
+  color: white;
+  text-align: -webkit-center;
+}
+
+.btn-primary {
+  width: 150px !important;
+  height: 40px;
+  border-radius: 8px;
+  color: black;
+  background-color: yellow;
+  font-size: 20px; 
+  font-weight: bolder;
+}
+
+.btn-primary:hover {
+  width: 165px !important;
+  background-color: yellow !important;
+  color: black !important;
+}
+.text-center {
+  color: white;
+}
+
+#email > .form-control {  
+  width: 50% !important;
+}
+
+#password > .form-control {
+  width: 50% !important;
+}
+
+#password-confirm > .form-control {
+  width: 50% !important;
+}
+
+@media (max-width: 767px) {
+  #email > .form-control {  
+    width: 70% !important;
+  }
+  
+  #password > .form-control {
+    width: 70% !important;
+  }  
+}
+
+#street > .form-control {  
+  width: 50% !important;
+}
+
+#number > .form-control {  
+  width: 50% !important;
+}
+
+#neighborhood > .form-control {  
+  width: 50% !important;
+}
+
+#references > .form-control {  
+  width: 50% !important;
+}
+
+/* Perfil */
+.mail-profile,
+.mail-profile2 {
+  text-align: right;
+  color: white;
+  font-size: 20px;
+}
+
+.mail-profile2 {
+  font-weight: bolder;
+}
+
+.address-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.user-address {
+  min-height: 250px;
+  border: solid;
+  margin: 10px;
+  text-align: center;
+  color: white;
+  height: auto;
+  border-radius: 8px;
+}
+
+.not-selected-address {
+  height: 180px;
+  padding: 10px;
+  min-width: 200px;
+}
+
+.selected-address {
+  height: 180px;
+  padding: 10px;
+  background-color: yellow;
+  color: black;
+  font-weight: bolder;
+  min-width: 200px;
+}
+
+.profile-name {
+  float: left;
+}
+
+/* Fin Perfil */
+
+/* Footer */
+.copyright {
+  margin-top: 20px;
+  color: white;
+  text-align: center;
+}
+
+/* Fin Footer */
