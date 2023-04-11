@@ -26,7 +26,7 @@ export default function Address() {
 		  
 		};		
 	  
-		fetch('http://localhost:4000/address/post', {
+		fetch(`${process.env.REACT_APP_BACKEND_URL}/address/post`, {
 		  method: 'POST',
 		  headers: {
 			'Content-Type': 'application/json'

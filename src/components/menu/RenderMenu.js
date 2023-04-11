@@ -6,7 +6,7 @@ function RenderMenu({category}){
 
     const [products, setProducts] = useState([])
     useEffect(()=>{
-        fetch (`http://localhost:4000/products/get?category=${category}`)
+        fetch (`${process.env.REACT_APP_BACKEND_URL}/products/get?category=${category}`)
             .then (data => data.json())
             .then (products =>{
                 setProducts(products.products)

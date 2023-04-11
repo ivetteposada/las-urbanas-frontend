@@ -8,7 +8,7 @@ function RenderAddress({emailUser}){
     const [selectedIdx, setSelectedIdx] = useState(null);
 
     useEffect(()=>{
-        fetch (`http://localhost:4000/address/get?user_email=${emailUser}`)
+        fetch (`${process.env.REACT_APP_BACKEND_URL}/address/get?user_email=${emailUser}`)
             .then (data => data.json())
             .then (address =>{
                 setAddress(address.add)
