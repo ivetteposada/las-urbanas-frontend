@@ -1,31 +1,59 @@
-import React from 'react'
-import PaypalExpressBtn from 'react-paypal-express-checkout'
+import React from "react";
 
-export default class PaypalButton extends React.Component {
-	render() {
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
-		
-		const onSuccess = (payment) => {			
-			console.log('The payment was succeeded!', payment)			
-		}
 
-		const onCancel = (data) => {			
-			console.log('The payment was cancelled!', data)			
-		}
+function PaypalBtn({ value }) {
 
-		const onError = (err) => {			
-			console.log('Error!', err)			
-		}
+  return (
 
-		let env = 'sandbox' 
-		let currency = 'MXP'
-		let total = this.props.total
+    <PayPalScriptProvider options={{ "client-id": process.env.REACT_APP_PAYPAL_SANDBOX_KEY }}>
 
-		const client = {
-			sandbox: process.env.REACT_APP_PAYPAL_SANDBOX_KEY,
-			production: 'YOUR-PRODUCTION-APP-ID',
-		}
-		
-		return <PaypalExpressBtn env={env} client={client} currency={currency} total={total} onError={onError} onSuccess={onSuccess} onCancel={onCancel} />
-	}
+      <PayPalButtons
+
+        style={{ layout: "vertical" }}
+
+        createOrder={(data, actions) => {
+
+          return actions.order.create({
+
+            purchase_units: [
+
+              {
+
+                amount: {
+
+                  value: value,
+
+                },
+
+              },
+
+            ],
+
+          });
+
+        }}
+
+        onApprove={(data, actions) => {
+
+          return actions.order.capture().then((details) => {
+
+            const name = details.payer.name.given_name;
+
+            alert(`Transaction completed by ${name}`);
+
+          });
+
+        }}
+
+      />
+
+    </PayPalScriptProvider>
+
+  );
+
 }
+
+
+export default PaypalBtn;

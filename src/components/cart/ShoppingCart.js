@@ -1,6 +1,6 @@
 import React, { useEffect, useState }  from 'react';
 import { Link } from "react-router-dom";
-import PaypalButton from '../Paypal/PaypalButton';
+import PaypalBtn from '../Paypal/PaypalButton';
 
 
 function ShoppingCart() {
@@ -52,8 +52,9 @@ function ShoppingCart() {
             <div className='summary-btn'>                                         
                 <Link to="/menu">
                     <button className='order-btn'>Menú</button>
-                </Link>              
-                { isLoggedIn ? <PaypalButton total={totalCart()}/> : null }             
+                </Link>    
+                
+                { isLoggedIn ? <PaypalBtn value={totalCart()} /> : null }             
             </div>
         </div>
     )
