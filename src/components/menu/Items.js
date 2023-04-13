@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {NumericInput} from './NumericInput'
 import Swal from 'sweetalert2'
+import { Link } from 'react-router-dom';
 
 function Items({product}) {
 
@@ -20,16 +21,24 @@ function Items({product}) {
       icon: 'success',
       title: 'Excelente',
       text: 'El producto se agrego con éxito a tu carrito',
-    })
-    
+    })    
+  }
+
+  const getId=()=>{
+    localStorage.removeItem('productId');
+    const productId = JSON.parse(localStorage.getItem(('productId')||'[]'))  
+    localStorage.setItem('productId',JSON.stringify(product._id))
   }
 
   return (
     <div className='item'>
-        <h3 class="product-name ">{product.name}</h3>
+        <h3 class="product-name ">{product.name}</h3>        
         <img src= {product.image} alt="product"/>        
         <p class="description">{product.description}</p>        
-        <p class="price">$ {product.price}</p>
+        <Link to={product._id}>
+          <p className="description " onClick={getId}>Ver detalle</p>
+        </Link>
+        <p class="price">$ {product.price}</p>        
         <div class="add-cart">
           <NumericInput onChange={(qty)=>setQty(qty)}></NumericInput>
           <button class="add" onClick={add}>Agregar</button>

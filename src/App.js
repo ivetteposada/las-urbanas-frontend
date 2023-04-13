@@ -18,6 +18,7 @@ import { ForgotPassword } from './components/login/ForgotPassword';
 import { Profile } from './components/profile/Profile';
 import { SingUp } from './components/login/SignUp';
 import { Address } from './components/profile/Address';
+import {ProductDetails} from './components/menu/ProductDetails'
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
         <Route path="/perfil" element={<Profile/>} />
         <Route path="/perfil/direcciones" element={<Address/>} />        
         <Route path="/registrarse" element={<SingUp/>} />
-
+        <Route path="/menu/:productId" element={<ProductDetails />} />
       </Routes>
       <Footer/>
     </div>
