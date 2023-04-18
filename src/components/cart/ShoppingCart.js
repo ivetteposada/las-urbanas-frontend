@@ -54,7 +54,12 @@ function ShoppingCart() {
                     <button className='order-btn'>Menú</button>
                 </Link>    
                 
-                { isLoggedIn ? <PaypalBtn value={totalCart()} /> : null }             
+                { isLoggedIn ? 
+                    <PaypalBtn value={totalCart()} /> 
+                    : 
+                    <Link to="/ingresar"><p>Incia sesión para hacer tu pedido</p></Link> 
+                }             
+                
             </div>
         </div>
     )

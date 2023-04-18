@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Card, Button, Form } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import  RenderAddress  from './RenderAddress'
 
 export default function Address() {
@@ -47,12 +47,13 @@ export default function Address() {
 
 	function handleLogout() {		
 		localStorage.clear()
-		navigate('/menu')
+		navigate('/')
 	}
 
 	return (
 		<>
-			<h4 className='text-center mb-4 profile-name'>Hola {nameUser}</h4>	
+			<Link to="/perfil"><p>Perfil</p></Link> 
+			<h4 className='text-center mb-4 profile-name'>Hola {nameUser}</h4>				
 			<p className='mail-profile'>Correo electrónico:</p> 
 			<p className='mail-profile2'>{emailUser}</p>									            
             <RenderAddress key={forceRender} emailUser={emailUser}></RenderAddress>

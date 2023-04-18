@@ -39,7 +39,7 @@ function App() {
         <Route path="/perfil" element={<Profile/>} />
         <Route path="/perfil/direcciones" element={<Address/>} />        
         <Route path="/registrarse" element={<SingUp/>} />
-        <Route path="/menu/:productId" element={<ProductDetails />} />
+        <Route path="/:productId" element={<ProductDetails />} />
       </Routes>
       <Footer/>
     </div>

@@ -9,7 +9,7 @@ export default function Profile() {
     
     function handleLogout() {		
 		localStorage.clear()
-		navigate('/menu')
+		navigate('/')
 	}
 	
 	return (

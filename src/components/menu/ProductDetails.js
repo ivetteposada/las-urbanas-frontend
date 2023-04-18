@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import {NumericInput} from './NumericInput'
 import Swal from 'sweetalert2'
-import { Link } from 'react-router-dom';
-import Items from './Items';
 
 function ProductDetails({}) {
 

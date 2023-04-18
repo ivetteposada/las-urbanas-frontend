@@ -35,7 +35,7 @@ function Items({product}) {
         <h3 class="product-name ">{product.name}</h3>        
         <img src= {product.image} alt="product"/>        
         <p class="description">{product.description}</p>        
-        <Link to={product._id}>
+        <Link to={`/${product._id}`}>
           <p className="description " onClick={getId}>Ver detalle</p>
         </Link>
         <p class="price">$ {product.price}</p>        
