@@ -34,10 +34,11 @@ export default function Address() {
 		  body: JSON.stringify(data)
 		})
 		.then(response => response.json())
-		.then(data => {
-		  console.log(data);
+		.then(data => {		  
 		  setStreet('')
 		  setNumber('')
+		  setNeighborhood('')
+		  setReference('')
 		  setForceRender(data._id)
 		})
 		.catch(error => {
@@ -52,10 +53,16 @@ export default function Address() {
 
 	return (
 		<>
-			<Link to="/perfil"><p>Perfil</p></Link> 
-			<h4 className='text-center mb-4 profile-name'>Hola {nameUser}</h4>				
-			<p className='mail-profile'>Correo electrónico:</p> 
-			<p className='mail-profile2'>{emailUser}</p>									            
+			<div className='profile-main'>
+				<div className='profile1'>
+					<Link to="/perfil"><p>Perfil</p></Link> 
+					<h4 className='text-center mb-4 profile-name'>Hola {nameUser}</h4>				
+				</div>
+				<div className='profile2'>
+					<p className='mail-profile'>Correo electrónico:</p> 
+					<p className='mail-profile2'>{emailUser}</p>									            
+				</div>
+			</div>
             <RenderAddress key={forceRender} emailUser={emailUser}></RenderAddress>
 			<h2 className='text-center mb-4'>Registra tu dirección</h2>
 			<Card>

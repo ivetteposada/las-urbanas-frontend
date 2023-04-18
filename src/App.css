@@ -260,6 +260,11 @@ form {
 }
 
 /* Perfil */
+.profile-main {
+  display: flex;
+  justify-content: space-between;
+}
+
 .mail-profile,
 .mail-profile2 {
   text-align: right;
